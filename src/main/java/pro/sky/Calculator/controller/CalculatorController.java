@@ -55,13 +55,14 @@ public class CalculatorController {
                          @RequestParam(required = false) Integer num2) {
         if (num1 == null || num2 == null) {
             return "<i> Неверный запрос!  Формат ввода: </i>  /calculator/divide?num1=(число)&num2=(число) ";
-        } else if ( num2 == 0) {
+        } else if (num2 == 0) {
             return "На ноль делить нельзя!";
         } else {
             return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
         }
 
     }
+
 }
 
 
