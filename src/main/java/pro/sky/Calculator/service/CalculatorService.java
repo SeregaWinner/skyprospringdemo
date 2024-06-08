@@ -1,6 +1,7 @@
-package pro.sky.skyprospringdemo;
+package pro.sky.Calculator.service;
 
 import org.springframework.stereotype.Service;
+import pro.sky.Calculator.exceptions.DivideByZeroException;
 
 @Service
 public class CalculatorService {
@@ -23,6 +24,9 @@ public class CalculatorService {
     }
 
     public int divide(int num1, int num2) {
+        if (num2 == 0) {
+            throw new DivideByZeroException();
+        }
         return num1 / num2;
     }
 }
